@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1400px;
+      height: 900px;
+      background: #0d1117;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden;
+    }
+    .terminal-window {
+      width: 1280px;
+      height: 820px;
+      background: #161b22;
+      border-radius: 10px;
+      border: 1px solid #30363d;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .titlebar {
+      height: 40px;
+      background: #0d1117;
+      border-bottom: 1px solid #21262d;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      position: relative;
+    }
+    .traffic-lights {
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+    .window-title {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 0;
+      font-size: 13px;
+      color: #8b949e;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    pre {
+      padding: 24px 28px;
+      font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #c9d1d9;
+      white-space: pre-wrap;
+      overflow: hidden;
+      flex: 1;
+    }
+    .prompt { color: #58a6ff; font-weight: 600; }
+    .cmd { color: #f0f6fc; }
+    .header { color: #58a6ff; font-weight: bold; }
+    .score { color: #3fb950; font-weight: bold; }
+    .pass { color: #3fb950; }
+    .warn { color: #d29922; }
+    .fail { color: #f85149; }
+    .dim { color: #8b949e; }
+  </style>
+</head>
+<body>
+  <div class="terminal-window">
+    <div class="titlebar">
+      <div class="traffic-lights">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+      <div class="window-title">Terminal — zsh — 120x35</div>
+    </div>
+    <pre><span class="prompt">user@dev-machine:~/my-nextjs-app$</span> <span class="cmd">python3 scripts/audit.py https://my-site.com</span>
+
+<span class="header"># SEO Intelligence Audit Report</span>
+<span class="dim">Target:</span> https://my-site.com
+<span class="dim">Overall Health Score:</span> <span class="score">90/100 (EXCELLENT)</span>
+
+<span class="header">## Key Meta Signals</span>
+- Title (54 chars): `Modern SaaS Analytics & Growth Engine | MetricFlow`
+- Description (142 chars): `Streamline your analytics, automate daily reporting, and drive revenue at scale. Get started free.`
+- Canonical URL: `https://my-site.com`
+- Robots Directive: `index, follow (default)`
+- Word Count: `1,240 words`
+- Schemas: `SoftwareApplication, FAQPage, WebSite`
+
+<span class="header">## Audit Findings & Recommended Fixes</span>
+| Rule              | Status      | Finding / Action Required                               |
+| :---------------- | :---------: | :------------------------------------------------------ |
+| `title_length`    | <span class="pass">✅ PASS</span>    | Optimal title length (54 chars).                       |
+| `meta_description`| <span class="pass">✅ PASS</span>    | Meta description is within ideal range (142 chars).    |
+| `canonical_tag`   | <span class="pass">✅ PASS</span>    | Canonical tag present.                                 |
+| `mobile_viewport` | <span class="pass">✅ PASS</span>    | Mobile viewport defined.                               |
+| `h1_structure`    | <span class="pass">✅ PASS</span>    | Single H1 detected: 'Modern SaaS Analytics Engine'      |
+| `images_alt`      | <span class="pass">✅ PASS</span>    | All 18 images have alt attributes.                     |
+| `opengraph`       | <span class="pass">✅ PASS</span>    | OpenGraph social tags configured.                      |
+| `structured_data` | <span class="pass">✅ PASS</span>    | Detected Schema types: SoftwareApplication, FAQPage    |
+
+<span class="prompt">user@dev-machine:~/my-nextjs-app$</span> <span class="cmd">█</span></pre>
+  </div>
+</body>
+</html>
