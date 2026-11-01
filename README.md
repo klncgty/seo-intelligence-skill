@@ -4,148 +4,101 @@
 
 [![Agent Skill Compatible](https://img.shields.io/badge/Agent%20Skill-Compatible-blue.svg)](https://agensi.io)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](https://python.org)
-[![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero%20Pip-orange.svg)](https://github.com/klncgty/seo-intelligence-skill)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero%20Pip-orange.svg)](https://agensi.io)
+[![License: Commercial / Skill](https://img.shields.io/badge/License-Commercial%20Skill-purple.svg)](https://agensi.io)
+
+---
+
+### 🛒 How to Get the Full Skill Bundle
+
+The complete `seo-intelligence` executable skill package (including standalone Python audit tools, SERP blueprint generator, JSON-LD schema builder, and complete checklist swipe files) is available exclusively on the **Agensi.io Marketplace**:
+
+👉 **[Get SEO Intelligence on Agensi.io ($19.00)](https://www.agensi.io)**
+
+*(Instant download • Works out-of-the-box with Claude Code, Cursor, Windsurf, Codex, and Gemini CLI • Zero pip dependencies)*
 
 ---
 
 ## 📖 Overview
 
-**SEO Intelligence** is an autonomous skill engineered for AI coding agents (**Claude Code**, **Cursor**, **Windsurf**, **OpenAI Codex**, and **Gemini CLI**). 
+**SEO Intelligence** is an autonomous skill engineered specifically for AI coding agents. 
 
-Instead of requiring external bloated databases, API subscriptions, or complex setups, it provides a self-contained, zero-pip-dependency toolchain that allows your AI agent to:
-1. **Audit any live website or local code** (Next.js, Astro, HTML) for critical ranking deficiencies.
-2. **Generate Rank-1 SERP blueprints** (Title tags, CTR-optimized descriptions, heading outlines).
-3. **Build Google-compliant JSON-LD structured data** (SoftwareApplication, FAQPage, Article, Organization).
-4. **Auto-fix code issues in-place** through agentic refactoring.
+Instead of forcing developers to configure heavy databases, Docker stacks, or expensive monthly SaaS subscriptions (like Semrush or Ahrefs), it equips your agent with a self-contained, zero-dependency toolchain that operates directly on your code and live deployments.
+
+### Key Capabilities:
+1. **Instant On-Page Technical Audit:** Evaluates live URLs or local Next.js / Astro / HTML files across 12 ranking factors (title bounds, snippet truncation, H1–H6 hierarchy, missing image alt tags, canonicals, viewport, open graph). Outputs a 0–100 health score with actionable code fixes.
+2. **SERP Rank-1 Blueprint Engine:** Generates high-CTR title variations (50–60 chars), snippet-optimized meta descriptions (130–155 chars), and topical H2 outlines in both English and Turkish.
+3. **Automated JSON-LD Schema Generator:** Builds validated structured data for Software Applications (SaaS), FAQPages, Articles, and Organizations to capture rich Google snippets.
+4. **Agentic Code Refactoring:** Allows Claude Code or Cursor to directly modify your `app/layout.tsx`, inject schemas, and fix missing image alt tags in a single prompt.
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Installation (After Purchase)
 
-### 1. Installation
+Once downloaded from Agensi.io, simply extract the bundle into your agent's skills directory:
 
-#### In Claude Code
-Place the skill into your project or global skills directory:
+### For Claude Code
 ```bash
 # In your project root:
 mkdir -p .claude/skills
 cp -r /path/to/seo-intelligence-skill .claude/skills/seo-intelligence
 ```
 
-#### In Cursor / Windsurf
+### For Cursor / Windsurf
 Add to your project root or rules:
 ```bash
-# Add as a project reference
+# Place inside your project skills:
 cp -r /path/to/seo-intelligence-skill ./skills/seo-intelligence
 ```
 
 ---
 
-## 🛠️ CLI & Agent Tools Reference
+## 🤖 Example Agent Interactions
 
-All tools are located in `scripts/` and run using standard Python 3:
+Once loaded, you can command your agent with natural language:
 
-### 1. Technical SEO Auditor (`scripts/audit.py`)
-Evaluates 12 critical on-page ranking signals and outputs an actionable score (0–100):
-
-```bash
-# Audit a live URL:
-python3 scripts/audit.py https://example.com
-
-# Audit a local file (HTML, TSX, JSX):
-python3 scripts/audit.py ./app/page.tsx
-
-# Output raw JSON for programmatic agent consumption:
-python3 scripts/audit.py https://example.com --format json
-```
-
-#### Audited Signals:
-- **Title Tag:** Length (45–60 chars), primary keyword placement, truncation checks.
-- **Meta Description:** Length (130–155 chars), CTA presence, snippet limits.
-- **Heading Structure:** Exact single `<h1>` enforcement, `<h2>` hierarchy.
-- **Image Optimization:** Missing or empty `alt` attributes.
-- **Canonicalization:** `rel="canonical"` tag presence and syntax.
-- **Social Tags:** OpenGraph (`og:title`, `og:image`, `og:type`) & Twitter Cards.
-- **Structured Data:** JSON-LD schema detection and validation.
-- **Mobile Friendliness:** Mobile viewport tag compliance.
-
----
-
-### 2. SERP Rank-1 Blueprint Engine (`scripts/tag_blueprint.py`)
-Generates high-CTR title variations, search snippet descriptions, and topical outlines.
-
-```bash
-# Generate English Blueprint:
-python3 scripts/tag_blueprint.py "ai agent marketplace" --brand "Agensi" --lang en --type landing
-
-# Generate Turkish Blueprint:
-python3 scripts/tag_blueprint.py "doğal zeytinyağı" --brand "EgeHasat" --lang tr --type product
-```
-
-#### Outputs:
-- 4 High-CTR Title Candidates (under 60 characters).
-- 3 Click-Worthy Meta Descriptions (under 155 characters).
-- Single primary `<h1>` and structured `<h2>` topical sections.
-- Recommended Schema types.
-
----
-
-### 3. JSON-LD Schema Builder (`scripts/schema_builder.py`)
-Produces validated structured data to win Google Rich Snippets:
-
-```bash
-# Software / SaaS Application Schema:
-python3 scripts/schema_builder.py software \
-  --name "MetricFlow" \
-  --url "https://metricflow.app" \
-  --desc "Real-time product analytics platform" \
-  --price "0.00"
-
-# FAQPage Schema:
-python3 scripts/schema_builder.py faq \
-  --qa "What is MetricFlow?:::It is an analytics tool" "Is there a free trial?:::Yes, 14 days"
-
-# Article / Blog Post Schema:
-python3 scripts/schema_builder.py article \
-  --headline "How to Optimize Next.js SEO" \
-  --url "https://site.com/blog/nextjs-seo" \
-  --publisher "DevPress"
-```
-
----
-
-## 🤖 Example Agent Prompts
-
-Give these instructions to your AI coding agent (Claude Code, Cursor, etc.):
-
+### 1. Full Technical Audit & Health Check
 ```text
-> "Inspect https://my-site.com using the seo-intelligence skill, list all critical SEO deficiencies, and propose code fixes."
+> "Inspect https://my-saas-platform.com using the seo-intelligence skill, list all critical SEO deficiencies, and propose code fixes."
 ```
 
+### 2. High-CTR Meta Tags & Blueprint Generation
 ```text
-> "Using seo-intelligence, generate a Rank-1 title and meta description blueprint for the keyword 'b2b cold email tool', then update our app/layout.tsx metadata."
+> "Using seo-intelligence, generate a Rank-1 title and meta description blueprint for the keyword 'b2b cold email software', then update our app/layout.tsx metadata."
 ```
 
+### 3. Automated Image Alt-Tag Audit
 ```text
-> "Check all <img> tags in our components for missing alt attributes and fix them with descriptive keywords."
+> "Check all <img> and <Image> tags in our components for missing alt attributes and fix them with descriptive keywords."
 ```
 
+### 4. Rich Snippet Schema Injection
 ```text
-> "Generate a validated SoftwareApplication and FAQPage JSON-LD schema for our SaaS landing page and inject it into app/components/JsonLd.tsx."
+> "Generate a validated SoftwareApplication and FAQPage JSON-LD schema for our landing page and inject it into app/components/JsonLd.tsx."
 ```
 
 ---
 
-## 📋 Technical SEO Checklist
+## 🛠️ Bundled Tools Reference (Included in Package)
 
-For the full 50-point modern web app checklist, review [`references/technical-seo-checklist.md`](references/technical-seo-checklist.md).
-
-For high-CTR formulas and swipe files, review [`references/rank1-tag-benchmarks.md`](references/rank1-tag-benchmarks.md).
+| Tool | Description | Usage |
+| :--- | :--- | :--- |
+| `scripts/audit.py` | Standalone zero-pip auditor for URLs or local HTML/TSX files. | `python3 scripts/audit.py <URL_or_Path>` |
+| `scripts/tag_blueprint.py` | High-CTR title, meta snippet, and heading hierarchy generator (EN & TR). | `python3 scripts/tag_blueprint.py "<kw>" --brand "<brand>" --lang en` |
+| `scripts/schema_builder.py` | Google-compliant JSON-LD structured data generator. | `python3 scripts/schema_builder.py <faq\|software\|article\|org> [args]` |
+| `references/` | 50-point technical SEO checklist and Rank-1 CTR formula swipe file. | Markdown guides loaded on-demand by agent. |
 
 ---
 
-## 📄 License & Author
+## 💻 Compatibility & Environment
 
-- **Author:** Çağatay Kılınç ([@klncgty](https://github.com/klncgty))
-- **License:** MIT License. Free for commercial and personal use.
+- **Runtimes:** Python 3.8+ (standard library only, zero pip install required)
+- **Platforms:** macOS, Linux, Windows
+- **Supported Agents:** Claude Code, Cursor, Windsurf, GitHub Copilot CLI, OpenAI Codex, Gemini CLI
+
+---
+
+## 📄 License & Creator
+
+- **Created by:** Çağatay Kılınç ([@klncgty](https://github.com/klncgty))
+- **Distribution:** Exclusively distributed via [Agensi.io](https://www.agensi.io)
